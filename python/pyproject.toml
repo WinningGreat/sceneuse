@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sceneuse"
+version = "0.1.0"
+description = "Client for the sceneuse compositor-scene computer-use protocol"
+requires-python = ">=3.10"
+authors = [{ name = "sceneuse" }]
+
+[project.scripts]
+sceneuse = "sceneuse.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sceneuse*"]

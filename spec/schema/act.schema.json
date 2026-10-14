@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sceneuse.dev/schema/act.json",
+  "title": "sceneuse act params",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["op", "node"],
+      "properties": {
+        "op": { "const": "invoke" },
+        "node": { "type": "string" },
+        "action": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "node", "value"],
+      "properties": {
+        "op": { "const": "set" },
+        "node": { "type": "string" },
+        "value": { "type": ["string", "number", "boolean"] }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "window", "point"],
+      "properties": {
+        "op": { "const": "hit" },
+        "window": { "type": "string" },
+        "point": { "$ref": "#/$defs/point" },
+        "button": { "type": "string", "enum": ["left", "right", "double"] }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "keys"],
+      "properties": {
+        "op": { "const": "key" },
+        "keys": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "window"],
+      "properties": {
+        "op": { "const": "raise" },
+        "window": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "delta"],
+      "properties": {
+        "op": { "const": "scroll" },
+        "window": { "type": "string" },
+        "point": { "$ref": "#/$defs/point" },
+        "delta": { "$ref": "#/$defs/vec" }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["op", "window", "from", "to"],
+      "properties": {
+        "op": { "const": "drag" },
+        "window": { "type": "string" },
+        "from": { "$ref": "#/$defs/point" },
+        "to": { "$ref": "#/$defs/point" }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "point": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "vec": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

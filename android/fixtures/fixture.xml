@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="dev.sceneuse.fixture" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,2400]">
+    <node index="0" text="" resource-id="" class="android.widget.LinearLayout" package="dev.sceneuse.fixture" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,160][1032,900]">
+      <node index="0" text="" resource-id="dev.sceneuse.fixture:id/entry" class="android.widget.EditText" package="dev.sceneuse.fixture" content-desc="Fixture entry" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="true" password="false" selected="false" bounds="[48,200][1032,360]" />
+      <node index="1" text="Mark" resource-id="dev.sceneuse.fixture:id/mark" class="android.widget.Button" package="dev.sceneuse.fixture" content-desc="Mark" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,400][400,560]" />
+      <node index="2" text="idle" resource-id="dev.sceneuse.fixture:id/label" class="android.widget.TextView" package="dev.sceneuse.fixture" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,600][1032,720]" />
+    </node>
+  </node>
+</hierarchy>

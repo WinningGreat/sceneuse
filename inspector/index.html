@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sceneuse inspector</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark"></span>
+      <strong>sceneuse</strong>
+      <span class="muted">display scene</span>
+    </div>
+    <div class="status" id="status">connecting…</div>
+    <div class="meta" id="meta"></div>
+  </header>
+  <main>
+    <section class="col windows">
+      <h2>windows</h2>
+      <ol id="windows"></ol>
+    </section>
+    <section class="col stage">
+      <h2>compositor plane <span class="muted">damage in amber · tiles if any</span></h2>
+      <div class="canvas-wrap">
+        <canvas id="plane" width="1470" height="956"></canvas>
+      </div>
+    </section>
+    <section class="col nodes">
+      <h2>nodes</h2>
+      <pre class="prompt" id="prompt"></pre>
+      <ol id="nodes"></ol>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

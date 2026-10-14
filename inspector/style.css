@@ -1,0 +1,94 @@
+:root {
+  --bg: #12110f;
+  --panel: #1b1916;
+  --ink: #ece7dc;
+  --muted: #8a8476;
+  --line: #2c2924;
+  --amber: #e6a23c;
+  --focus: #7ec8a3;
+  --danger: #d16b58;
+  --tile: #6ea8d9;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); }
+body {
+  font: 13px/1.4 "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.brand { display: flex; align-items: center; gap: 0.55rem; letter-spacing: 0.02em; }
+.mark {
+  width: 0.7rem; height: 0.7rem;
+  background: var(--amber);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--amber) 25%, transparent);
+}
+.muted { color: var(--muted); font-weight: 400; }
+.status { color: var(--focus); }
+.status.bad { color: var(--danger); }
+.meta { margin-left: auto; color: var(--muted); }
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr 320px;
+  min-height: 0;
+}
+.col {
+  padding: 0.8rem 1rem;
+  overflow: auto;
+  border-right: 1px solid var(--line);
+}
+.col.nodes { border-right: none; }
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+ol { list-style: none; margin: 0; padding: 0; }
+.win, .node {
+  padding: 0.45rem 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.win:hover, .node:hover { background: #24211c; }
+.win.focus { border-color: var(--focus); }
+.win .title { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.win .sub, .node .sub { color: var(--muted); font-size: 11px; }
+
+.canvas-wrap {
+  background: #0c0b0a;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  height: calc(100% - 2rem);
+}
+canvas { display: block; width: 100%; height: auto; }
+
+.prompt {
+  background: #141210;
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.7rem;
+  white-space: pre-wrap;
+  color: #cfc6b4;
+  margin: 0 0 0.8rem;
+  max-height: 12rem;
+  overflow: auto;
+  font-size: 11px;
+}
+
+.node.selected { border-color: var(--amber); }
+.node.target { border-color: var(--focus); background: rgba(126, 200, 163, 0.08); }
+.node.focus-node { box-shadow: inset 3px 0 0 var(--amber); }

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sceneuse.dev/schema/envelope.json",
+  "title": "sceneuse envelope",
+  "type": "object",
+  "required": ["v", "type"],
+  "properties": {
+    "v": { "type": "integer", "const": 1 },
+    "type": {
+      "type": "string",
+      "enum": [
+        "hello",
+        "status",
+        "subscribe",
+        "unsubscribe",
+        "act",
+        "ok",
+        "error",
+        "scene"
+      ]
+    },
+    "id": { "type": "string", "minLength": 1 },
+    "params": { "type": "object" },
+    "result": { "type": "object" },
+    "error": {
+      "type": "object",
+      "required": ["code", "message"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "bad_request",
+            "unknown_type",
+            "permission_denied",
+            "not_found",
+            "unsupported",
+            "internal"
+          ]
+        },
+        "message": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "type": { "enum": ["hello", "status", "subscribe", "unsubscribe", "act"] } }
+      },
+      "then": { "required": ["id"] }
+    }
+  ]
+}

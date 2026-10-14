@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>dev.sceneuse.sceneused</string>
+	<key>CFBundleName</key>
+	<string>sceneused</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleExecutable</key>
+	<string>sceneused</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSUIElement</key>
+	<false/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>sceneused reads the accessibility tree of the focused window and performs invoke/set actions for computer-use agents.</string>
+	<key>NSScreenCaptureUsageDescription</key>
+	<string>sceneused reads compositor frames and dirty rects to build a display scene for computer-use agents. It does not send a full-screen screenshot as the primary payload.</string>
+</dict>
+</plist>
