@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Protocol spec
+    url: https://github.com/WinningGreat/sceneuse/blob/main/spec/scene.md
+    about: Scene/Act wire format, roles, and act ops
+  - name: Adapter contracts
+    url: https://github.com/WinningGreat/sceneuse/tree/main/adapters
+    about: macOS, Linux, Android, iOS, Windows capture and act mapping

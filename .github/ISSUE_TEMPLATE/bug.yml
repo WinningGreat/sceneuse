@@ -1,0 +1,47 @@
+name: Bug
+description: Unexpected scene, act, or adapter behavior
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues
+          required: true
+        - label: This is not a missing accessibility label in the target app (empty tree / no `press` on a `text` node)
+          required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Adapter
+      options:
+        - macOS
+        - Linux
+        - Android
+        - iOS
+        - Python client / MCP
+        - spec / protocol
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what the scene showed, what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: scene
+    attributes:
+      label: Compact scene (optional)
+      description: Paste `scene.render()` or MCP `scene` text. Redact personal content.
+      render: text
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: OS, Simulator/device, `idb`/`iosef`/`adb` if used, sceneuse commit.
+    validations:
+      required: true

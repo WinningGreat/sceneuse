@@ -1,0 +1,34 @@
+name: Feature
+description: Suggest a protocol, adapter, or MCP change
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - spec / protocol
+        - macOS
+        - Linux
+        - Android
+        - iOS
+        - Windows
+        - Python client / MCP
+        - inspector
+        - docs
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What you cannot do with the current scene or act ops.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Concrete change (new field, role, act, or adapter source).
+    validations:
+      required: true
